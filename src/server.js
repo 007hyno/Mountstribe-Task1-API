@@ -8,6 +8,7 @@ import product from "./routes/product.js"
 const app = express();
 
 const PORT= process.env.PORT || 8080
+const HOST= process.env.HOST ||'localhost'
 
 app.use(cors({
   origin: process.env.CORS, 
@@ -22,6 +23,6 @@ app.use('/api/store',store)
 app.use('/api/product',product)
 
 
-app.listen(PORT, () => {
+app.listen(PORT,HOST, () => {
   console.log(`listening on port ${PORT}`)
 })
